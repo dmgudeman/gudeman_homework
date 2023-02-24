@@ -20,31 +20,24 @@ public
 def merge(left, right)
     merged = []
     until left.empty? || right.empty?
-        case left[0] <=> right[0]
+        case left[0].length <=> right[0].length
         when -1 
             merged << left.shift
         when 0
             merged << left.shift
         when 1
-            right << right.shift
+            merged << right.shift
         end
     end
     merged + left + right
 end
 
- def dominant(arr)
-   
- 
-    # prc ||= Proc.new{|x,y| x <=> y}
+def dominant(arr)
     return arr if arr.length <= 1
     mid = arr.length / 2
-
     left = dominant(arr[0...mid])
     right = dominant(arr[mid..-1])
-
     merge(left, right)
-     p arr
-
 end
   #-----
 #    p left
@@ -69,7 +62,7 @@ end
 
 # end
 
-print dominant(FISH)
+print dominant(FISH)[-1]
 
 # def clever 
 #     longest = ""
