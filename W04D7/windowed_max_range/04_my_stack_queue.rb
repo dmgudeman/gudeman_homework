@@ -14,6 +14,7 @@ class MyStackQueue < MyStack
     def enqueue(val)
         @store.push(val)
         @max = val if val > @max
+        @min = val if val < @min
     end
 
     def dequeue
