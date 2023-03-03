@@ -53,11 +53,28 @@ def hash_two_sum?(arr, target)
    false
 end
 
+# arr = [0, 7, 5, 1]
+# p hash_two_sum?(arr, 6) # => should be true
+# p hash_two_sum?(arr, 10) # => should be false
+
+
+
+
+
+
+
+def two_sum?(arr, target)
+    hash = {}
+
+    arr.each do |el|
+        return true if hash[target - el]
+        hash[el] = true
+    end
+    false
+end
+
+
 arr = [0, 7, 5, 1]
-p hash_two_sum?(arr, 6) # => should be true
-p hash_two_sum?(arr, 10) # => should be false
-
-
-
-
+p two_sum?(arr, 6) # => should be true
+p two_sum?(arr, 10) # => should be false
 
