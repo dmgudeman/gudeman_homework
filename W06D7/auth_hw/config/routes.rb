@@ -3,9 +3,4 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-
-  root "users#new"
-  resources :users, only: %i(create new show)
-
-  resource :session, only: [:new, :create, :destroy]
 end
